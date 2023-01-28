@@ -87,16 +87,15 @@ void setup()
 
 void loop() {
     unsigned long currentMillis = millis();
-    int h = 0, m = 0, s = 0;
 
     if (currentMillis - pollMillis >= pollPeriod) {
         pollMillis = currentMillis;
 
         timeClient.update();
 
-        h = timeClient.getHours();
-        m = timeClient.getMinutes();
-        s = timeClient.getSeconds();
+        int h = timeClient.getHours();
+        int m = timeClient.getMinutes();
+        int s = timeClient.getSeconds();
 
         if (s != lasts) {
             lasts = s;
