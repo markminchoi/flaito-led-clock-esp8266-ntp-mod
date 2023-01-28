@@ -36,8 +36,7 @@ NTPClient timeClient(ntpUDP, "kr.pool.ntp.org", 32400); // UTC+9(Seoul)
 
 TM1650 panel;
 
-void displayInit()
-{
+void displayInit() {
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 4; j++)
             panel.setPosition(j, digits[j][i]);
@@ -45,16 +44,14 @@ void displayInit()
     }
 }
 
-void displayTime(int h, int m)
-{
+void displayTime(int h, int m) {
     panel.setPosition(3, digits[3][h / 10]);
     panel.setPosition(2, digits[2][h % 10]);
     panel.setPosition(1, digits[1][m / 10]);
     panel.setPosition(0, digits[0][m % 10]);
 }
 
-void setup()
-{
+void setup() {
     pinMode(4, OUTPUT);
     digitalWrite(4, HIGH);
 
