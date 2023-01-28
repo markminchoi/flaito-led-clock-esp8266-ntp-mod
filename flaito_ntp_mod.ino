@@ -38,10 +38,11 @@ TM1650 panel;
 
 void displayInit()
 {
-    panel.setPosition(3, digits[3][9]);
-    panel.setPosition(2, digits[2][9]);
-    panel.setPosition(1, digits[1][9]);
-    panel.setPosition(0, digits[0][9]);
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 4; j++)
+            panel.setPosition(j, digits[j][i]);
+        delay(100);
+    }
 }
 
 void displayTime(int h, int m)
