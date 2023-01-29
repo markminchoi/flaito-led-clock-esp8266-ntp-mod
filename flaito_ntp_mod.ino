@@ -60,6 +60,7 @@ void setup() {
     Wire.begin(2, 0);
 
     panel.init();
+    panel.setBrightness(1);
     panel.displayOn();
 
     displayInit();
