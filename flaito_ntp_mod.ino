@@ -25,7 +25,7 @@ const long pollPeriod = 50;
 
 const int adcThreshold = 260;
 
-unsigned long colonPMillis = 0;
+unsigned long colonMillis = 0;
 unsigned long pollMillis = 0;
 
 int lasts = 0;
@@ -97,7 +97,7 @@ void loop() {
 
         if (s != lasts) {
             lasts = s;
-            colonPMillis = currentMillis;
+            colonMillis = currentMillis;
             displayTime(h, m);
             panel.setDot(0, true);
 
